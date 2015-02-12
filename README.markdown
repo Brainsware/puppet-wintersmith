@@ -3,9 +3,6 @@
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with wintersmith](#setup)
-    * [What wintersmith affects](#what-wintersmith-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with wintersmith](#beginning-with-wintersmith)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -33,9 +30,9 @@ after that, we can define a blog:
 
 ```puppet
 wintersmith::site { 'blag':
-  ensure       => 'latest',
-  source       => 'git://github.com/igalic/blag',
-  target       => '/srv/web/blag.esat',
+  ensure => 'latest',
+  source => 'git://github.com/igalic/blag',
+  target => '/srv/web/blag.esat',
 }
 ```
 

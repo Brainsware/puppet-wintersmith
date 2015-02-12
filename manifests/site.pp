@@ -24,14 +24,14 @@
 #      target       => '/srv/web/blag.esat',
 #    }
 #
-class wintersmith::site (
-  source,
-  target,
-  ensure       => 'present',
-  vcs_provider => 'git',
+define wintersmith::site (
+  $source,
+  $target,
+  $ensure       = 'present',
+  $vcs_provider = 'git',
 ) {
 
-  exec { "${module_name}::site[install ${title}'s dependencies]":
+  exec { "${module_name}::site: install ${title}'s dependencies":
     command     => 'npm install',
     path        => $::wintersmith::path,
     cwd         => $target,
@@ -39,18 +39,18 @@ class wintersmith::site (
     require     => Vcsrepo[$target],
   }
 
-  exec { "${module_name}::site[rebuild ${title}]":
+  exec { "${module_name}::site: rebuild ${title}":
     command     => 'wintersmith build',
     path        => $::wintersmith::path,
     cwd         => $target,
     refreshonly => true,
-    require     => Exec["${module_name}::site[install ${title}'s dependencies"],
+    require     => Exec["${module_name}::site: install ${title}'s dependencies"],
     subscribe   => Vcsrepo[$target],
   }
 
   vcsrepo { $target:
     ensure   => $ensure,
-    provider => 'npm',
-    name     => $package_name,
+    provider => $vcs_provider,
+    source   => $source,
   }
 }
