@@ -1,0 +1,24 @@
+{
+  "name": "brainsware-wintersmith",
+  "version": "0.1.0",
+  "author": "brainsware",
+  "summary": "A module to deploy any number of Wintermsith sites",
+  "license": "Apache-2.0",
+  "source": "https://github.com/Brainsware/puppet-wintersmith",
+  "project_page": "https://github.com/Brainsware/puppet-wintersmith",
+  "issues_url": "https://github.com/Brainsware/puppet-wintersmith/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.0.0 <= 5.0.0"
+    },
+    {
+      "name": "puppetlabs-nodejs",
+      "version_requirement": ">= 0.7.1 <= 0.8.0"
+    },
+    {
+      "name": "puppetlabs-vcsrepo",
+      "version_requirement": ">= 1.2.0 <= 2.0.0"
+    }
+  ]
+}

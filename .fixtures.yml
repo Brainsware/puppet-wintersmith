@@ -1,0 +1,7 @@
+fixtures:
+  repositories:
+    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    vcsrepo: "https://github.com/puppetlabs/puppetlabs-vcsrepo.git"
+    nodejs: "https://github.com/puppetlabs/puppetlabs-nodejs.git"
+  symlinks:
+    wintersmith: "#{source_dir}"
