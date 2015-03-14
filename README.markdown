@@ -65,6 +65,9 @@ wintersmith::site { 'blag':
 *vcs_provider*
  VCS provider. (Default: `git`)
 
+*vcs_revision*
+ VCS revision. (Default: `master`)
+
 ## Limitations
 
 Tested on Ubuntu. If vcsrepo, and npm runs on it, and you can adapt the `path`,

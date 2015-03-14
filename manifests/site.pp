@@ -13,6 +13,9 @@
 # [*target*]
 #    target dir where to put the vcs repository. (This parameter must be set)
 #
+# [*vcs_revision*]
+#   VCS revision. (Default: `master`)
+#
 # [*vcs_provider*]
 #   VCS provider. (Default: `git`)
 #
@@ -29,6 +32,7 @@ define wintersmith::site (
   $target,
   $ensure       = 'present',
   $vcs_provider = 'git',
+  $vcs_revision = 'master',
 ) {
 
   exec { "${module_name}::site: install ${title}'s dependencies":
@@ -51,6 +55,7 @@ define wintersmith::site (
   vcsrepo { $target:
     ensure   => $ensure,
     provider => $vcs_provider,
+    revision => $vcs_revision,
     source   => $source,
   }
 }
