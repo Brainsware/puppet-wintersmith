@@ -14,7 +14,7 @@ This module helps install [wintersmith](http://wintersmith.io/) and maintain any
 
 ## Module Description
 
-This module depends on [nodejs](https://forge.puppetlabs.com/puppetlabs/nodejs)
+This module depends on [nodejs](https://forge.puppetlabs.com/voxpupuli/nodejs)
 to install wintersmith, and
 [vcsrepo](https://forge.puppetlabs.com/puppetlabs/vcsrepo) to actually checkout your blog!
 
